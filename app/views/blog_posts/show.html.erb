@@ -1,0 +1,6 @@
+<h2>Title:</h2><p> <%= @blog_post.title %></p>
+<h2>Content:</h2><p> <%= @blog_post.content %></p>
+<% if @blog_post.cover_image.present? %>
+<h2>Cover image:</h2><p> <%= image_tag @blog_post.cover_image %></p>
+<% end %>
+<%= link_to "edit", edit_blog_post_path(@blog_post), class:"btns" %>

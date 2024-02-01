@@ -1,0 +1,7 @@
+<h1>Edit Post Page</h1>
+<%= render partial: "form" %>
+<br>
+
+<%= button_to "delete", @blog_post, method: :delete, data: {turbo_confirm:"are you sure?"}, class:"btns" %>
+<br>
+<%= link_to "Home Page", blog_posts_path, class:"btns"%>

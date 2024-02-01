@@ -1,0 +1,19 @@
+<h1>This is Blog Post site for Practice</h1>
+<% @blog_post.each do |blog_post| %>
+<div>
+<% if blog_post.draft? %>
+<h3 style=" background-color:rgb(207, 197, 196)">Draft</h3>
+<% elsif blog_post.published? %>
+<h3 style=" background-color:rgb(186, 235, 108)">Published</h3>
+<% else %>
+<h3 style=" background-color:rgb(235, 214, 108)">Scheduled</h3>
+<% end %>
+</div>
+
+<h2><%= link_to blog_post.title, blog_post %></h2>
+<% end %>
+<div>
+    <% if @pagy.count > @pagy.items %>
+    <%== pagy_nav(@pagy) if @pagy.pages > 1 %>
+    <% end %>
+</div>
