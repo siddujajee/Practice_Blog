@@ -9,21 +9,24 @@
 <%= form.rich_text_area :content %>
 </div>
 
+
 <div>
 <h2><%= form.label :cover_image %>:</h2>
 <% if @blog_post.cover_image.present? %>
-<div>
-    <p style="width:200px" <%= dom_id(@blog_post, :cover_image) %>>
-    <%= image_tag @blog_post.cover_image %></p>
-    <%= link_to "remove cover", blog_post_cover_image_path(@blog_post), data:{turbo_method: :delete, turbo_confirm:"are you sure do you want to delte cover image?"} %>
-    </div>
-<% end %>
-<%= form.file_field :cover_image %>
-</div>
 
 <%#= form.label :published_at%>
 <%#= form.datetime_select :published_at, include_blank: true %>
 <div>
-<%= form.submit%>
+<div>
+    <p style="width:200px" <%= dom_id(@blog_post, :cover_image) %>>
+    <%= image_tag @blog_post.cover_image %></p>
+    <%= link_to "remove cover", blog_post_cover_image_path(@blog_post), data:{turbo_method: :delete, turbo_confirm:"are you sure do you want to delte cover image?"}, class:"btns" %>
+    </div>
+<% end %>
+<br>
+<%= form.file_field :cover_image %>
 </div>
+</div>
+<br>
+<%= form.submit  class:"btns"%>
 <% end %>

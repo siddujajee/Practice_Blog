@@ -12,6 +12,6 @@
     password: "123456",
     password_confirmation: "123456"
   )
-100.times do |i|
-  BlogPost.create(title: "Blog Post#{i}", content:"this is blog post #{i}")
-end
+# 100.times do |i|
+#   BlogPost.create(title: "Blog Post#{i}", content:"this is blog post #{i}")
+# end
